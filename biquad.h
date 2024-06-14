@@ -1,6 +1,10 @@
 #ifndef __biquad_h
 #define __biquad_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct iir_filter {
     int sections;
     int sect_ord;
@@ -18,5 +22,9 @@ void biquad_init_lowpass(iir_filter_t *filter, double fs, double f);
 void biquad_init_highpass(iir_filter_t *filter, double fs, double f);
 void biquad_init_bandpass(iir_filter_t *filter, double fs, double f1, double f2);
 void biquad_init_bandstop(iir_filter_t *filter, double fs, double f1, double f2);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
